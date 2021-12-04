@@ -1,0 +1,34 @@
+{
+  "name": "photonamer",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "random": "dist/index.js"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "pnpm clean && ncc build src/index.ts --minify --source-map",
+    "predev": "npx only-allow pnpm",
+    "dev": "pnpm build -- --watch",
+    "start": "./dist/index.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "keywords": [],
+  "author": {
+    "name": "sunnz",
+    "url": "https://github.com/sunnz"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "@vercel/ncc": "^0.33.0",
+    "cz-conventional-changelog": "3.3.0",
+    "prettier": "2.5.0",
+    "typescript": "^4.5.2"
+  }
+}
