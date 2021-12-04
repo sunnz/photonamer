@@ -1,13 +1,19 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/exif': ^0.6.3
   '@types/node': ^16.11.11
   '@vercel/ncc': ^0.33.0
   cz-conventional-changelog: 3.3.0
+  exif: ^0.6.0
   prettier: 2.5.0
   typescript: ^4.5.2
 
+dependencies:
+  exif: 0.6.0
+
 devDependencies:
+  '@types/exif': 0.6.3
   '@types/node': 16.11.11
   '@vercel/ncc': 0.33.0
   cz-conventional-changelog: 3.3.0
@@ -97,6 +103,12 @@ packages:
       - typescript
     dev: true
     optional: true
+
+  /@types/exif/0.6.3:
+    resolution: {integrity: sha512-OMthUry1d2/gpXL2H3RGaj7KWRw0EWdxI0OANeUWbYMotBxljFuAl3eydCgDaBYTyD+d4Q3atdVcmimwS6KvGg==}
+    dependencies:
+      '@types/node': 16.11.11
+    dev: true
 
   /@types/node/16.11.11:
     resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
@@ -311,6 +323,12 @@ packages:
       '@commitlint/load': 15.0.0
     dev: true
 
+  /debug/2.6.9:
+    resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    dependencies:
+      ms: 2.0.0
+    dev: false
+
   /dedent/0.7.0:
     resolution: {integrity: sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=}
     dev: true
@@ -342,6 +360,12 @@ packages:
     resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=}
     engines: {node: '>=0.8.0'}
     dev: true
+
+  /exif/0.6.0:
+    resolution: {integrity: sha1-YKYmaAdlQst+T1cZnUrG830sX0o=}
+    dependencies:
+      debug: 2.6.9
+    dev: false
 
   /expand-tilde/2.0.2:
     resolution: {integrity: sha1-l+gBqgUt8CRU3kawK/YhZCzchQI=}
@@ -628,6 +652,10 @@ packages:
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: true
+
+  /ms/2.0.0:
+    resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
+    dev: false
 
   /mute-stream/0.0.7:
     resolution: {integrity: sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=}
