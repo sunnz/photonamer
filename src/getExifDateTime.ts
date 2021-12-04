@@ -4,6 +4,7 @@
  * @copyright 2021
  */
 
+import { parse } from "date-fns";
 import { ExifImage } from "exif";
 
 /**
@@ -12,7 +13,7 @@ import { ExifImage } from "exif";
  * @param path to a jpeg file
  * @returns the date and time the picture was taken, ie when the original image data was generated
  */
-export const getExifDateTime = (path: string): Promise<string> => {
+export const getExifDateTime = (path: string): Promise<Date> => {
   return new Promise((resolve) => {
     new ExifImage({ image: path }, (error, data) => {
       if (error) {
@@ -27,7 +28,13 @@ export const getExifDateTime = (path: string): Promise<string> => {
         throw new Error("No DateTimeOriginal field found in image exif data");
       }
 
-      resolve(DateTimeOriginal);
+      const parsedDate = parse(
+        DateTimeOriginal,
+        "yyyy:MM:dd HH:mm:ss",
+        new Date()
+      );
+
+      resolve(parsedDate);
     });
   });
 };

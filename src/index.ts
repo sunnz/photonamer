@@ -6,12 +6,16 @@
  * @copyright 2021
  */
 
+import { format } from "date-fns";
 import { getExifDateTime } from "./getExifDateTime";
 
 // exif smoke
-getExifDateTime("photo.jpg")
-  .then((dateTime) => console.log(`photo.jpg:\t${dateTime}`))
-  .catch((error) => console.error(error));
-getExifDateTime("photo2.JPG")
-  .then((dateTime) => console.log(`photo2.JPG:\t${dateTime}`))
-  .catch((error) => console.error(error));
+["photo.jpg", "photo2.JPG", "photo3.jpg"].forEach((imgPath) => {
+  getExifDateTime(imgPath)
+    .then((date) => {
+      const dateString = format(date, "yyyyMMdd_HHmmss");
+      const fileName = `IMG_${dateString}.jpg`;
+      console.log(`${imgPath}:\t${date} => ${fileName}`);
+    })
+    .catch((error) => console.error(error));
+});
