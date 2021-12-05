@@ -4,8 +4,10 @@
  * @copyright 2021
  */
 
-import { parse } from "date-fns";
+import { parse } from "date-fns/fp";
 import { ExifImage } from "exif";
+
+const parseExifDate = parse(new Date())("yyyy:MM:dd HH:mm:ss");
 
 /**
  * get the date time of when a photo was taken
@@ -28,13 +30,8 @@ export const getExifDateTime = (path: string): Promise<Date> => {
         throw new Error("No DateTimeOriginal field found in image exif data");
       }
 
-      const parsedDate = parse(
-        DateTimeOriginal,
-        "yyyy:MM:dd HH:mm:ss",
-        new Date()
-      );
-
-      resolve(parsedDate);
+      const date = parseExifDate(DateTimeOriginal);
+      resolve(date);
     });
   });
 };
