@@ -10,15 +10,13 @@ specifiers:
   prettier: 2.5.0
   typescript: ^4.5.2
 
-dependencies:
-  date-fns: 2.27.0
-  exif: 0.6.0
-
 devDependencies:
   '@types/exif': 0.6.3
   '@types/node': 16.11.11
   '@vercel/ncc': 0.33.0
   cz-conventional-changelog: 3.3.0
+  date-fns: 2.27.0
+  exif: 0.6.0
   prettier: 2.5.0
   typescript: 4.5.2
 
@@ -328,13 +326,13 @@ packages:
   /date-fns/2.27.0:
     resolution: {integrity: sha512-sj+J0Mo2p2X1e306MHq282WS4/A8Pz/95GIFcsPNMPMZVI3EUrAdSv90al1k+p74WGLCruMXk23bfEDZa71X9Q==}
     engines: {node: '>=0.11'}
-    dev: false
+    dev: true
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     dependencies:
       ms: 2.0.0
-    dev: false
+    dev: true
 
   /dedent/0.7.0:
     resolution: {integrity: sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=}
@@ -372,7 +370,7 @@ packages:
     resolution: {integrity: sha1-YKYmaAdlQst+T1cZnUrG830sX0o=}
     dependencies:
       debug: 2.6.9
-    dev: false
+    dev: true
 
   /expand-tilde/2.0.2:
     resolution: {integrity: sha1-l+gBqgUt8CRU3kawK/YhZCzchQI=}
@@ -662,7 +660,7 @@ packages:
 
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
-    dev: false
+    dev: true
 
   /mute-stream/0.0.7:
     resolution: {integrity: sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=}

@@ -21,6 +21,7 @@ const defaultFormat = (date: Date) => date.toLocaleString();
  * Date.prototype.toLocaleString() is used by default if none given
  * @returns a list formatted date for each path, each in a { path, date } object
  * @async
+ * @deprecated
  */
 export const getImageDates = async (
   paths: string[],
