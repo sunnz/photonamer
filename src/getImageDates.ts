@@ -4,7 +4,6 @@
  * @copyright 2021
  */
 
-import { format } from "date-fns";
 import { getExifDateTime } from "./getExifDateTime";
 
 type ImageDate = {
@@ -12,16 +11,23 @@ type ImageDate = {
   date: string;
 };
 
+const defaultFormat = (date: Date) => date.toLocaleString();
+
 /**
  * get android formatted date for all given paths to images
  *
  * @param paths to jpeg files
- * @returns a list android formatted date for each path, each in a { path, date } object
+ * @param formatFn optional format function to turn js Date object into a formatted date string,
+ * Date.prototype.toLocaleString() is used by default if none given
+ * @returns a list formatted date for each path, each in a { path, date } object
  */
-export const getImageDates = async (paths: string[]): Promise<ImageDate[]> => {
+export const getImageDates = async (
+  paths: string[],
+  formatFn: (date: Date) => string = defaultFormat
+): Promise<ImageDate[]> => {
   const images = paths.map(async (path) => ({
     path,
-    date: format(await getExifDateTime(path), "yyyyMMdd_HHmmss"),
+    date: formatFn(await getExifDateTime(path)),
   }));
 
   const imageDates = await Promise.all(images);
