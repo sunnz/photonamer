@@ -7,7 +7,12 @@
  */
 
 import { getDataOfImages } from "./getDataOfImages";
+import { getDateMapFromDataOfImages } from "./getDateMapFromDataOfImages";
 
-getDataOfImages(["photo.jpg", "photo2.JPG", "photo3.jpg"])
-  .then((data) => console.dir(data))
+getDataOfImages(["photo3.jpg", "photo.jpg", "photo2.JPG"])
+  .then((data) => {
+    const dateMap = getDateMapFromDataOfImages(data);
+    console.dir(data);
+    console.dir(dateMap);
+  })
   .catch((e) => console.error(e));

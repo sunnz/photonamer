@@ -20,6 +20,7 @@ const defaultFormat = (date: Date) => date.toLocaleString();
  * @param formatFn optional format function to turn js Date object into a formatted date string,
  * Date.prototype.toLocaleString() is used by default if none given
  * @returns a list formatted date for each path, each in a { path, date } object
+ * @async
  */
 export const getImageDates = async (
   paths: string[],

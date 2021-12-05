@@ -14,6 +14,7 @@ const parseExifDate = parse(new Date())("yyyy:MM:dd HH:mm:ss");
  *
  * @param path to a jpeg file
  * @returns the date and time the picture was taken, ie when the original image data was generated
+ * @async
  */
 export const getExifDateTime = (path: string): Promise<Date> => {
   return new Promise((resolve) => {
