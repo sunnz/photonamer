@@ -6,15 +6,8 @@
  * @copyright 2021
  */
 
-import { format } from "date-fns/fp";
-import { getImageDates } from "./getImageDates";
+import { getDataOfImages } from "./getDataOfImages";
 
-const androidDateFormat = format("yyyyMMdd_HHmmss");
-
-getImageDates(["photo.jpg", "photo2.JPG", "photo3.jpg"], androidDateFormat)
-  .then((data) => console.dir(data))
-  .catch((e) => console.error(e));
-
-getImageDates(["photo.jpg", "photo2.JPG", "photo3.jpg"])
+getDataOfImages(["photo.jpg", "photo2.JPG", "photo3.jpg"])
   .then((data) => console.dir(data))
   .catch((e) => console.error(e));
