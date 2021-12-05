@@ -38,5 +38,5 @@ export const getDataOfImages = async (
   });
 
   const imageDataList = await Promise.all(images);
-  return imageDataList;
+  return imageDataList.sort((a, b) => a.src.localeCompare(b.src));
 };
