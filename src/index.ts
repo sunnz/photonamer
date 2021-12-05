@@ -6,13 +6,11 @@
  * @copyright 2021
  */
 
-import { getDataOfImages } from "./getDataOfImages";
-import { getDateMapFromDataOfImages } from "./getDateMapFromDataOfImages";
+import { getDataOfImages, ImageData } from "./getDataOfImages";
+import { getSuffix } from "./getSuffix";
 
 getDataOfImages(["photo3.jpg", "photo.jpg", "photo2.JPG"])
-  .then((data) => {
-    const dateMap = getDateMapFromDataOfImages(data);
-    console.dir(data);
-    console.dir(dateMap);
+  .then((allData) => {
+    console.dir(getSuffix(allData));
   })
   .catch((e) => console.error(e));
