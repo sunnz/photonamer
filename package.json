@@ -9,7 +9,6 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "pnpm clean && ncc build src/index.ts --minify",
-    "predev": "npx only-allow pnpm",
     "dev": "pnpm build -- --watch",
     "start": "./dist/index.js"
   },
@@ -26,11 +25,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/exif": "^0.6.3",
+    "@types/inquirer": "^8.1.3",
     "@types/node": "^16.11.11",
     "@vercel/ncc": "^0.33.0",
     "cz-conventional-changelog": "3.3.0",
     "date-fns": "^2.27.0",
     "exif": "^0.6.0",
+    "inquirer": "^8.2.0",
     "prettier": "2.5.0",
     "typescript": "^4.5.2"
   }
