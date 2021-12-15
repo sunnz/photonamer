@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "bin": {
-    "random": "dist/index.js"
+    "photonamer": "dist/index.js"
   },
   "scripts": {
     "clean": "rm -rf dist",
